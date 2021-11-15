@@ -1,7 +1,2 @@
-FROM registry.redhat.io/rhel8/httpd-24
-
-# Add application sources
-ADD ./*  /var/www/html/
-
-# The run script uses standard ways to run the application
-CMD run-httpd
+FROM httpd:2.4
+COPY /home/ec2-user/ansible/index.html /usr/local/apache2/htdocs/
